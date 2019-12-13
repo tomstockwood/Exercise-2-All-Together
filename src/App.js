@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MessageList from './MessageList.js'
+import InputGroup from './InputGroup.js'
 
 /*
 This exercise will help you practice many of your newly aquired React skills.
@@ -50,7 +52,7 @@ class App extends Component {
             <h2>Super Awesome Chat!!</h2>
             <div className="name sender">{this.state.users[0].username}</div>
 
-            <ul className="message-list">
+            {/* <ul className="message-list">
               {this.state.messages.map((message, index) => (
                 <li
                   key={index}
@@ -61,9 +63,21 @@ class App extends Component {
                   <p>{`${message.username}: ${message.text}`}</p>
                 </li>
               ))}
-            </ul>
+            </ul> */}
+            
+            <MessageList
+              messages={this.state.messages}
+              users={this.state.users}
+              user={this.state.users[0]}
+            >
+            </MessageList>
+            
+            <InputGroup
+              isDisabled={this.isDisabled}
+            >
+            </InputGroup>
 
-            <div>
+            {/* <div>sx
               <form className="input-group">
                 <input type="text" className="form-control" placeholder="Enter your message..." />
                 <div className="input-group-append">
@@ -72,7 +86,7 @@ class App extends Component {
                   </button>
                 </div>
               </form>
-            </div>
+            </div> */}
           </div>
 
           <div className="chat-window">
