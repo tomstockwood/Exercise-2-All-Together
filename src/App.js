@@ -51,19 +51,6 @@ class App extends Component {
           <div className="chat-window">
             <h2>Super Awesome Chat!!</h2>
             <div className="name sender">{this.state.users[0].username}</div>
-
-            {/* <ul className="message-list">
-              {this.state.messages.map((message, index) => (
-                <li
-                  key={index}
-                  className={
-                    message.username === this.state.users[0].username ? 'message sender' : 'message recipient'
-                  }
-                >
-                  <p>{`${message.username}: ${message.text}`}</p>
-                </li>
-              ))}
-            </ul> */}
             
             <MessageList
               messages={this.state.messages}
@@ -75,45 +62,23 @@ class App extends Component {
               isDisabled={this.isDisabled}
             >
             </InputGroup>
-
-            {/* <div>sx
-              <form className="input-group">
-                <input type="text" className="form-control" placeholder="Enter your message..." />
-                <div className="input-group-append">
-                  <button className="btn submit-button" disabled={this.isDisabled()}>
-                    SEND
-                  </button>
-                </div>
-              </form>
-            </div> */}
           </div>
 
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
             <div className="name sender">{this.state.users[1].username}</div>
-            <ul className="message-list">
-              {this.state.messages.map((message, index) => (
-                <li
-                  key={index}
-                  className={
-                    message.username === this.state.users[1].username ? 'message sender' : 'message recipient'
-                  }
-                >
-                  <p>{`${message.username}: ${message.text}`}</p>
-                </li>
-              ))}
-            </ul>
 
-            <div>
-              <form className="input-group">
-                <input type="text" className="form-control" placeholder="Enter your message..." />
-                <div className="input-group-append">
-                  <button className="btn submit-button" disabled={this.isDisabled()}>
-                    SEND
-                  </button>
-                </div>
-              </form>
-            </div>
+            <MessageList
+              messages={this.state.messages}
+              user={this.state.users[1]}
+            >
+            </MessageList>
+            
+            <InputGroup
+              isDisabled={this.isDisabled}
+            >
+            </InputGroup>
+
           </div>
         </div>
       </div>
