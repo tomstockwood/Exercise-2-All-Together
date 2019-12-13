@@ -51,6 +51,17 @@ class App extends Component {
     this.setState({ SecondUserMessage: event.target.value });
   };
 
+  sendFirstUserMessage = event => {
+    const { messages } = this.state
+    messages.push(
+      { 
+        username: 'Amy', 
+        text: this.state.FirstUserMessage
+      }
+    )
+    this.setState(({newmessages}) => ({ messages }))
+  };
+
   render() {
     console.log(this.state)
     return (
@@ -68,6 +79,7 @@ class App extends Component {
             value={this.state.FirstUserMessage}
             isDisabled={this.isDisabled}
             handleMessage={this.handleFirstUserMessage}
+            sendMessage={this.sendFirstUserMessage}
           >
           </ChatWindow>
           
