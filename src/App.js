@@ -58,7 +58,17 @@ class App extends Component {
           >
           </ChatWindow>
           
-          <div className="chat-window">
+          <ChatWindow
+            heading={'Super Awesome Chat'}
+            user={this.state.users[1]}
+            messages={this.state.messages}
+            isDisabled={this.isDisabled}
+          >
+          </ChatWindow>
+          
+
+          
+          {/* <div className="chat-window">
             <h2>Super Awesome Chat!!</h2>
             <div className="name sender">{this.state.users[0].username}</div>
             
@@ -72,9 +82,9 @@ class App extends Component {
               isDisabled={this.isDisabled}
             >
             </InputGroup>
-          </div>
+          </div> */}
 
-          <div className="chat-window">
+          {/* <div className="chat-window">
             <h2>Super Awesome Chat</h2>
             <div className="name sender">{this.state.users[1].username}</div>
 
@@ -89,7 +99,7 @@ class App extends Component {
             >
             </InputGroup>
 
-          </div>
+          </div> */}
         </div>
       </div>
     );
