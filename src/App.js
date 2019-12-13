@@ -8,19 +8,32 @@ This exercise will help you practice many of your newly aquired React skills.
 The instructions are included in the `instructions.md` file.
 */
 
-const users = [{ username: 'Amy' }, { username: 'John' }];
+// const users = [{ username: 'Amy' }, { username: 'John' }];
 
-const messages = [
-  { username: 'Amy', text: 'Hi, Jon!' },
-  { username: 'Amy', text: 'How are you?' },
-  { username: 'John', text: 'Hi, Amy! Good, you?' },
-];
+// const messages = [
+//   { username: 'Amy', text: 'Hi, Jon!' },
+//   { username: 'Amy', text: 'How are you?' },
+//   { username: 'John', text: 'Hi, Amy! Good, you?' },
+// ];
 
 class App extends Component {
   /*
   If the user did not type anything, he/she should not be
   allowed to submit.
   */
+
+  state={
+    users : [
+      { username: 'Amy' }, 
+      { username: 'John' }
+    ],
+    messages : [
+      { username: 'Amy', text: 'Hi, Jon!' },
+      { username: 'Amy', text: 'How are you?' },
+      { username: 'John', text: 'Hi, Amy! Good, you?' },
+    ]
+  }
+
   isDisabled = () => {
     return false;
   };
@@ -34,15 +47,15 @@ class App extends Component {
         </header>
         <div className="container">
           <div className="chat-window">
-            <h2>Super Awesome Chat</h2>
-            <div className="name sender">{users[0].username}</div>
+            <h2>Super Awesome Chat!!</h2>
+            <div className="name sender">{this.state.users[0].username}</div>
 
             <ul className="message-list">
-              {messages.map((message, index) => (
+              {this.state.messages.map((message, index) => (
                 <li
                   key={index}
                   className={
-                    message.username === users[0].username ? 'message sender' : 'message recipient'
+                    message.username === this.state.users[0].username ? 'message sender' : 'message recipient'
                   }
                 >
                   <p>{`${message.username}: ${message.text}`}</p>
@@ -64,13 +77,13 @@ class App extends Component {
 
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
-            <div className="name sender">{users[1].username}</div>
+            <div className="name sender">{this.state.users[1].username}</div>
             <ul className="message-list">
-              {messages.map((message, index) => (
+              {this.state.messages.map((message, index) => (
                 <li
                   key={index}
                   className={
-                    message.username === users[1].username ? 'message sender' : 'message recipient'
+                    message.username === this.state.users[1].username ? 'message sender' : 'message recipient'
                   }
                 >
                   <p>{`${message.username}: ${message.text}`}</p>
