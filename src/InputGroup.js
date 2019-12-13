@@ -8,7 +8,8 @@ function InputGroup(props) {
           type="text" 
           className="form-control" 
           placeholder="Enter your message..."
-          value={props.value} 
+          value={props.value}
+          onChange={props.handleMessage}
         />
         <div className="input-group-append">
           <button className="btn submit-button" disabled={props.isDisabled()}>

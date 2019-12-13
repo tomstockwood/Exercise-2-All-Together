@@ -35,14 +35,20 @@ class App extends Component {
       { username: 'Amy', text: 'How are you?' },
       { username: 'John', text: 'Hi, Amy! Good, you?' },
     ],
-    newMessages : [
-      { username: 'Amy', message: ''},
-      { username: 'John', message: ''}
-    ]
+    FirstUserMessage: '',
+    SecondUserMessage: '' 
   }
 
   isDisabled = () => {
     return false;
+  };
+
+  handleFirstUserMessage = event => {
+    this.setState({ FirstUserMessage: event.target.value });
+  };
+  
+  handleSecondUserMessage = event => {
+    this.setState({ SecondUserMessage: event.target.value });
   };
 
   render() {
@@ -59,8 +65,9 @@ class App extends Component {
             heading={'Super Awesome Chat!'}
             user={this.state.users[0]}
             messages={this.state.messages}
-            //value={this.state.newMessages[0].message}
+            value={this.state.FirstUserMessage}
             isDisabled={this.isDisabled}
+            handleMessage={this.handleFirstUserMessage}
           >
           </ChatWindow>
           
@@ -68,8 +75,9 @@ class App extends Component {
             heading={'Super Awesome Chat'}
             user={this.state.users[1]}
             messages={this.state.messages}
-            //value={this.state.newMessages[0].message}
+            value={this.state.SecondUserMessage}
             isDisabled={this.isDisabled}
+            handleMessage={this.handleSecondUserMessage}
           >
           </ChatWindow>
         

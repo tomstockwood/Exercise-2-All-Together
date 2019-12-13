@@ -16,6 +16,7 @@ function ChatWindow(props) {
 
       <InputGroup
         isDisabled={props.isDisabled}
+        handleMessage={props.handleMessage}
         value={props.value}
       >
       </InputGroup>
