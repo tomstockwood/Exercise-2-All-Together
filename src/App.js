@@ -67,7 +67,6 @@ class App extends Component {
             
             <MessageList
               messages={this.state.messages}
-              users={this.state.users}
               user={this.state.users[0]}
             >
             </MessageList>
