@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import MessageList from './MessageList.js'
 import InputGroup from './InputGroup.js'
+import ChatWindow from './ChatWindow.js'
 
 /*
 This exercise will help you practice many of your newly aquired React skills.
@@ -48,6 +49,15 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <div className="container">
+          
+          <ChatWindow
+            heading={'Super Awesome Chat!'}
+            user={this.state.users[0]}
+            messages={this.state.messages}
+            isDisabled={this.isDisabled}
+          >
+          </ChatWindow>
+          
           <div className="chat-window">
             <h2>Super Awesome Chat!!</h2>
             <div className="name sender">{this.state.users[0].username}</div>
