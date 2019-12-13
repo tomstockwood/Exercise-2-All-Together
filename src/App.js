@@ -65,41 +65,7 @@ class App extends Component {
             isDisabled={this.isDisabled}
           >
           </ChatWindow>
-          
-
-          
-          {/* <div className="chat-window">
-            <h2>Super Awesome Chat!!</h2>
-            <div className="name sender">{this.state.users[0].username}</div>
-            
-            <MessageList
-              messages={this.state.messages}
-              user={this.state.users[0]}
-            >
-            </MessageList>
-            
-            <InputGroup
-              isDisabled={this.isDisabled}
-            >
-            </InputGroup>
-          </div> */}
-
-          {/* <div className="chat-window">
-            <h2>Super Awesome Chat</h2>
-            <div className="name sender">{this.state.users[1].username}</div>
-
-            <MessageList
-              messages={this.state.messages}
-              user={this.state.users[1]}
-            >
-            </MessageList>
-            
-            <InputGroup
-              isDisabled={this.isDisabled}
-            >
-            </InputGroup>
-
-          </div> */}
+        
         </div>
       </div>
     );
