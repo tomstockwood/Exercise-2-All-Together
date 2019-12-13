@@ -34,6 +34,10 @@ class App extends Component {
       { username: 'Amy', text: 'Hi, Jon!' },
       { username: 'Amy', text: 'How are you?' },
       { username: 'John', text: 'Hi, Amy! Good, you?' },
+    ],
+    newMessages : [
+      { username: 'Amy', message: ''},
+      { username: 'John', message: ''}
     ]
   }
 
@@ -42,6 +46,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
@@ -54,6 +59,7 @@ class App extends Component {
             heading={'Super Awesome Chat!'}
             user={this.state.users[0]}
             messages={this.state.messages}
+            //value={this.state.newMessages[0].message}
             isDisabled={this.isDisabled}
           >
           </ChatWindow>
@@ -62,6 +68,7 @@ class App extends Component {
             heading={'Super Awesome Chat'}
             user={this.state.users[1]}
             messages={this.state.messages}
+            //value={this.state.newMessages[0].message}
             isDisabled={this.isDisabled}
           >
           </ChatWindow>

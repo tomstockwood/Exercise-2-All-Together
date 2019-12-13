@@ -4,7 +4,12 @@ function InputGroup(props) {
   return (
     <div>
       <form className="input-group">
-        <input type="text" className="form-control" placeholder="Enter your message..." />
+        <input 
+          type="text" 
+          className="form-control" 
+          placeholder="Enter your message..."
+          value={props.value} 
+        />
         <div className="input-group-append">
           <button className="btn submit-button" disabled={props.isDisabled()}>
             SEND

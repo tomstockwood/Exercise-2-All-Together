@@ -16,6 +16,7 @@ function ChatWindow(props) {
 
       <InputGroup
         isDisabled={props.isDisabled}
+        value={props.value}
       >
       </InputGroup>
     </div>
