@@ -52,14 +52,15 @@ class App extends Component {
   };
 
   sendFirstUserMessage = event => {
-    const { messages } = this.state
+    const { messages } = this.state;
+    const newMessage = this.state.FirstUserMessage;
     messages.push(
       { 
         username: 'Amy', 
-        text: this.state.FirstUserMessage
+        text: newMessage,
       }
     )
-    this.setState(({newmessages}) => ({ messages }))
+    this.setState(prevState => ({ messages }))
   };
 
   render() {
@@ -93,6 +94,14 @@ class App extends Component {
           >
           </ChatWindow>
         
+          <button 
+            className="btn submit-button" 
+            disabled={this.isDisabled()}
+            onClick={this.sendFirstUserMessage}
+          >
+            SEND
+          </button>
+
         </div>
       </div>
     );
