@@ -15,7 +15,6 @@ function ChatWindow(props) {
       </MessageList>
 
       <InputGroup
-        isDisabled={props.isDisabled}
         handleMessage={props.handleMessage}
         sendMessage={props.sendMessage}
         value={props.value}

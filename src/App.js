@@ -46,21 +46,35 @@ class App extends Component {
   handleFirstUserMessage = event => {
     this.setState({ FirstUserMessage: event.target.value });
   };
-  
+
   handleSecondUserMessage = event => {
     this.setState({ SecondUserMessage: event.target.value });
-  };
+  }
 
   sendFirstUserMessage = event => {
     const { messages } = this.state;
-    const newMessage = this.state.FirstUserMessage;
-    messages.push(
-      { 
-        username: 'Amy', 
-        text: newMessage,
-      }
-    )
-    this.setState(prevState => ({ messages }))
+    this.setState(() => ({
+      messages: [
+        ...messages,
+        { 
+          username: 'Amy', 
+          text: this.state.FirstUserMessage,
+        }
+      ]
+    }))
+  };
+
+  sendSecondUserMessage = event => {
+    const { messages } = this.state;
+    this.setState(() => ({
+      messages: [
+        ...messages,
+        { 
+          username: 'John', 
+          text: this.state.SecondUserMessage,
+        }
+      ]
+    }))
   };
 
   render() {
@@ -78,7 +92,6 @@ class App extends Component {
             user={this.state.users[0]}
             messages={this.state.messages}
             value={this.state.FirstUserMessage}
-            isDisabled={this.isDisabled}
             handleMessage={this.handleFirstUserMessage}
             sendMessage={this.sendFirstUserMessage}
           >
@@ -89,18 +102,18 @@ class App extends Component {
             user={this.state.users[1]}
             messages={this.state.messages}
             value={this.state.SecondUserMessage}
-            isDisabled={this.isDisabled}
             handleMessage={this.handleSecondUserMessage}
+            sendMessage={this.sendSecondUserMessage}
           >
           </ChatWindow>
         
-          <button 
+          {/* <button 
             className="btn submit-button" 
             disabled={this.isDisabled()}
             onClick={this.sendFirstUserMessage}
           >
             SEND
-          </button>
+          </button> */}
 
         </div>
       </div>

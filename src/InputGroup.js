@@ -14,8 +14,12 @@ function InputGroup(props) {
         <div className="input-group-append">
           <button 
             className="btn submit-button" 
-            disabled={props.isDisabled()}
-            onClick={props.sendMessage}
+            disabled={props.value===''}
+            onClick={event => {
+              event.stopPropagation()
+              event.preventDefault()
+              props.sendMessage(event)
+            }}  
           >
             SEND
           </button>
